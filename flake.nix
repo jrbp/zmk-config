@@ -12,15 +12,17 @@
     forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
   in {
     packages = forAllSystems (system: rec {
-      default = corne36Fw;
+      default = firmware;
+      firmware = corne36;
 
-      corne36Fw = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-        name = "corne36Fw";
+      corne36 = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
+        name = "corne36";
 
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
 
         board = "nice_nano_v2";
-        shield = "corne36_%PART%";
+        shield = "corne_%PART% nice_view_adapter nice_view";
+        # Want the nice_view only on the left. Maybe define own nix function calling buildKeyboard.
 
         zephyrDepsHash = "sha256-CV+AUBetseibTkuB9BJ6R9KLENMz/Or46/+liEjD/6s=";
 
@@ -31,7 +33,7 @@
         };
       };
 
-      flash = zmk-nix.packages.${system}.flash.override { inherit corne36Fw; };
+      flash = zmk-nix.packages.${system}.flash.override { inherit corne36; };
       update = zmk-nix.packages.${system}.update;
     });
 

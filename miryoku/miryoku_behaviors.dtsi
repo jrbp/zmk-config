@@ -1,0 +1,43 @@
+// Copyright 2022 Manna Harbour
+// https://github.com/manna-harbour/miryoku
+
+/ {
+  behaviors {
+    u_mt: u_mt {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    u_mtl: u_mtl {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <150>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <MIRYOKU_TIMERLESS_RIGHT MIRYOKU_TIMERLESS_THUMBS>;
+      hold-trigger-on-release;
+    };
+    u_mtr: u_mtr {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <150>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <MIRYOKU_TIMERLESS_LEFT MIRYOKU_TIMERLESS_THUMBS>;
+      hold-trigger-on-release;
+    };
+    u_lt: u_lt {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+  };
+};
