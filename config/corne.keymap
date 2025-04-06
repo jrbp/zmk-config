@@ -1,2 +1,2 @@
-#include "./corne36.h"
+#include "./corne.h"
 #include "../miryoku/miryoku.dtsi"
