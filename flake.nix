@@ -37,8 +37,16 @@
       update = zmk-nix.packages.${system}.update;
     });
 
-    devShells = forAllSystems (system: {
-      default = zmk-nix.devShells.${system}.default;
-    });
+    devShells = forAllSystems (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+     in {
+        default = zmk-nix.devShells.${system}.default.overrideAttrs (oldAttrs: {
+          buildInputs = oldAttrs.buildInputs ++ [
+            pkgs.clang-tools
+          ];
+        });
+      }
+    );
   };
 }
