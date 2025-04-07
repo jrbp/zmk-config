@@ -8,7 +8,11 @@
     };
   };
 
-  outputs = { self, nixpkgs, zmk-nix }: let
+  outputs = {
+    self,
+    nixpkgs,
+    zmk-nix,
+  }: let
     forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
   in {
     packages = forAllSystems (system: rec {
@@ -19,7 +23,7 @@
         name = "corne36";
         config = "devices/corne36";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ".h"];
+        src = nixpkgs.lib.sourceFilesBySuffices self [".conf" ".h" ".dtsi" ".keymap" ".yml"];
 
         board = "nice_nano_v2";
         shield = "corne_%PART% nice_view_adapter nice_view";
@@ -34,18 +38,20 @@
         };
       };
 
-      flash = zmk-nix.packages.${system}.flash.override { inherit corne36; };
+      flash = zmk-nix.packages.${system}.flash.override {inherit corne36;};
       update = zmk-nix.packages.${system}.update;
     });
 
-    devShells = forAllSystems (system:
-      let
+    devShells = forAllSystems (
+      system: let
         pkgs = nixpkgs.legacyPackages.${system};
-     in {
+      in {
         default = zmk-nix.devShells.${system}.default.overrideAttrs (oldAttrs: {
-          buildInputs = oldAttrs.buildInputs ++ [
-            pkgs.clang-tools
-          ];
+          buildInputs =
+            oldAttrs.buildInputs
+            ++ [
+              pkgs.clang-tools
+            ];
         });
       }
     );
