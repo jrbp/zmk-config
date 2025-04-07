@@ -17,14 +17,15 @@
 
       corne36 = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
         name = "corne36";
+        config = "devices/corne36";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
+        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ".h"];
 
         board = "nice_nano_v2";
         shield = "corne_%PART% nice_view_adapter nice_view";
         # Want the nice_view only on the left. Maybe define own nix function calling buildKeyboard.
 
-        zephyrDepsHash = "sha256-CV+AUBetseibTkuB9BJ6R9KLENMz/Or46/+liEjD/6s=";
+        zephyrDepsHash = "sha256-IawexxUjptHPv5YNoxcSNPShapQWVZNE2jk3rHsLGIM=";
 
         meta = {
           description = "ZMK firmware";
