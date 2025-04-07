@@ -2,58 +2,48 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    zmk-nix = {
-      url = "github:lilyinstarlight/zmk-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # zmk-nix.url = "github:lilyinstarlight/zmk-nix"; # just coppied+modifed nix dir
   };
 
   outputs = {
     self,
     nixpkgs,
-    zmk-nix,
   }: let
-    forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
+    forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
   in {
-    packages = forAllSystems (system: rec {
+    lib = {
+      buildersFor = pkgs: import ./nix/builders.nix { inherit (pkgs) callPackage; };
+    };
+    packages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in rec {
       default = firmware;
-      firmware = corne36;
 
-      corne36 = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
+      # TODO: make more conducive to multiple keyboards in repo
+      firmware = corne36;
+      flash = pkgs.callPackage ./nix/flash.nix {inherit firmware;};
+      update = pkgs.callPackage ./nix/update.nix {};
+
+      corne36 = self.legacyPackages.${system}.buildSplitKeyboard {
         name = "corne36";
         config = "devices/corne36";
-
         src = nixpkgs.lib.sourceFilesBySuffices self [".conf" ".h" ".dtsi" ".keymap" ".yml"];
-
         board = "nice_nano_v2";
-        shield = "corne_%PART% nice_view_adapter nice_view";
-        # Want the nice_view only on the left. Maybe define own nix function calling buildKeyboard.
+        shield = "corne_%PART%";
+        shieldPartsExtra = {left = " nice_view_adapter nice_view";};
 
         zephyrDepsHash = "sha256-IawexxUjptHPv5YNoxcSNPShapQWVZNE2jk3rHsLGIM=";
 
         meta = {
-          description = "ZMK firmware";
+          description = "corne36 ZMK firmware";
           license = nixpkgs.lib.licenses.mit;
           platforms = nixpkgs.lib.platforms.all;
         };
       };
-
-      flash = zmk-nix.packages.${system}.flash.override {inherit corne36;};
-      update = zmk-nix.packages.${system}.update;
     });
 
-    devShells = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
-        default = zmk-nix.devShells.${system}.default.overrideAttrs (oldAttrs: {
-          buildInputs =
-            oldAttrs.buildInputs
-            ++ [
-              pkgs.clang-tools
-            ];
-        });
-      }
-    );
+    legacyPackages = forAllSystems (system: self.lib.buildersFor nixpkgs.legacyPackages.${system});
+
+    devShells = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
+      default = pkgs.callPackage ./nix/shell.nix {extraPackages = [pkgs.clang-tools];};
+    });
   };
 }
