@@ -75,6 +75,10 @@
     mkdir $out
     cp */*.uf2 $out/
 
+    # mkdir $out/debug_files
+    # cp zephyr/.config $out/debug_files/
+    # cp zephyr/zephyr.dts $out/debug_files/
+
     runHook postInstall
   '';
 })
