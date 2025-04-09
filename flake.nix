@@ -9,12 +9,14 @@
     self,
     nixpkgs,
   }: let
-    forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
   in {
     lib = {
-      buildersFor = pkgs: import ./nix/builders.nix { inherit (pkgs) callPackage; };
+      buildersFor = pkgs: import ./nix/builders.nix {inherit (pkgs) callPackage;};
     };
-    packages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in rec {
+    packages = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in rec {
       default = firmware;
 
       # TODO: make more conducive to multiple keyboards in repo
@@ -38,11 +40,28 @@
           platforms = nixpkgs.lib.platforms.all;
         };
       };
+      reset = self.legacyPackages.${system}.buildSplitKeyboard {
+        name = "reset";
+        config = "devices/corne36";
+        src = nixpkgs.lib.sourceFilesBySuffices self [".conf" ".h" ".dtsi" ".keymap" ".yml"];
+        board = "nice_nano_v2";
+        shield = "settings_reset";
+
+        zephyrDepsHash = "sha256-IawexxUjptHPv5YNoxcSNPShapQWVZNE2jk3rHsLGIM=";
+
+        meta = {
+          description = "reset corne36 ZMK firmware";
+          license = nixpkgs.lib.licenses.mit;
+          platforms = nixpkgs.lib.platforms.all;
+        };
+      };
     });
 
     legacyPackages = forAllSystems (system: self.lib.buildersFor nixpkgs.legacyPackages.${system});
 
-    devShells = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
       default = pkgs.callPackage ./nix/shell.nix {extraPackages = [pkgs.clang-tools];};
     });
   };
