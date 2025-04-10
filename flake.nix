@@ -32,7 +32,7 @@
         shield = "corne_%PART%";
         shieldPartsExtra = {left = " nice_view_adapter nice_view";};
 
-        zephyrDepsHash = "sha256-IawexxUjptHPv5YNoxcSNPShapQWVZNE2jk3rHsLGIM=";
+        zephyrDepsHash = "sha256-RaWV1oeF2LTs6ZW73uj9u+sOgbQNgNko6t2hex2B/IM=";
 
         meta = {
           description = "corne36 ZMK firmware";
@@ -47,7 +47,7 @@
         board = "nice_nano_v2";
         shield = "settings_reset";
 
-        zephyrDepsHash = "sha256-IawexxUjptHPv5YNoxcSNPShapQWVZNE2jk3rHsLGIM=";
+        zephyrDepsHash = "sha256-RaWV1oeF2LTs6ZW73uj9u+sOgbQNgNko6t2hex2B/IM=";
 
         meta = {
           description = "reset corne36 ZMK firmware";
