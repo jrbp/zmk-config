@@ -47,6 +47,6 @@ in
     mkdir $out
     for part in $parts; do
       ln -s ''${!part}/zmk.uf2 $out/zmk_"$part".uf2
-      # ln -s ''${!part}/debug_files $out/debug_files_"$part"
+      ln -s ''${!part}/debug_files $out/debug_files_"$part"
     done
   ''
