@@ -40,57 +40,55 @@
       hold-while-undecided;
       bindings = < &kp >, < &kp >;
     };
-    // Begin HR for HRM layers. The only reason these are wrapped in mod-morph is to cancel the LSHIFT (which is always on in the layer they are active). The first binding should never be called. Still need to use layer to only activate one per hand.
     mm_hrm_f: mm_hrm_f {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp F>, <&mt_hrm F RSHIFT>;
+      bindings = <&kp F>, <&mt_hrm LS(F) RSHIFT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_d: mm_hrm_d {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp D>, <&mt_hrm D LCTRL>;
+      bindings = <&kp D>, <&mt_hrm LS(D) LCTRL>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_s: mm_hrm_s {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp S>, <&mt_hrm_alt S LALT>;
+      bindings = <&kp S>, <&mt_hrm_alt LS(S) LALT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_a: mm_hrm_a {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp A>, <&mt_hrm A LGUI>;
+      bindings = <&kp A>, <&mt_hrm LS(A) LGUI>;
       mods = <(MOD_LSFT)>;
     };
 
     mm_hrm_j: mm_hrm_j {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp J>, <&mt_hrm J RSHIFT>;
+      bindings = <&kp J>, <&mt_hrm LS(J) RSHIFT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_k: mm_hrm_k {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp K>, <&mt_hrm K LCTRL>;
+      bindings = <&kp K>, <&mt_hrm LS(K) LCTRL>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_l: mm_hrm_l {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp L>, <&mt_hrm_alt L LALT>;
+      bindings = <&kp L>, <&mt_hrm_alt LS(L) LALT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_apos: mm_hrm_apos {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp APOS>, <&mt_hrm APOS LGUI>;
+      bindings = <&kp APOS>, <&mt_hrm LS(APOS) LGUI>;
       mods = <(MOD_LSFT)>;
     };
-    // END HRM for HRM layers
     u_ep_tog: u_ep_tog {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
