@@ -20,7 +20,7 @@
       default = firmware;
 
       # TODO: make more conducive to multiple keyboards in repo
-      firmware = corne36;
+      firmware = corne36_test;
       flash = pkgs.callPackage ./nix/flash.nix {inherit firmware;};
       update = pkgs.callPackage ./nix/update.nix {};
 
@@ -51,6 +51,22 @@
 
         meta = {
           description = "reset corne36 ZMK firmware";
+          license = nixpkgs.lib.licenses.mit;
+          platforms = nixpkgs.lib.platforms.all;
+        };
+      };
+      corne36_test = self.legacyPackages.${system}.buildSplitKeyboard {
+        name = "corne36_test";
+        config = "devices/corne36_test";
+        src = nixpkgs.lib.sourceFilesBySuffices self [".conf" ".h" ".dtsi" ".keymap" ".yml"];
+        board = "nice_nano_v2";
+        shield = "corne_%PART%";
+        shieldPartsExtra = {left = " nice_view_adapter nice_view";};
+
+        zephyrDepsHash = "sha256-RaWV1oeF2LTs6ZW73uj9u+sOgbQNgNko6t2hex2B/IM=";
+
+        meta = {
+          description = "corne36 test ZMK firmware";
           license = nixpkgs.lib.licenses.mit;
           platforms = nixpkgs.lib.platforms.all;
         };
