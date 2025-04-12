@@ -3,6 +3,9 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1250
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define TIMERLESS_THUMBS 36 37 38 39 40 41
 #define TIMERLESS_LEFT  1 2 3 4  5    13 14 15 16 17   25 26 27 28 29
@@ -41,44 +44,44 @@
     mm_hrm_f: mm_hrm_f {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp f>, <&mt_hrm f RSHIFT>;
+      bindings = <&kp F>, <&mt_hrm F RSHIFT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_d: mm_hrm_d {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp d>, <&mt_hrm d LCTRL>;
+      bindings = <&kp D>, <&mt_hrm D LCTRL>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_s: mm_hrm_s {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp s>, <&mt_hrm_alt s LALT>;
+      bindings = <&kp S>, <&mt_hrm_alt S LALT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_a: mm_hrm_a {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp a>, <&mt_hrm a LGUI>;
+      bindings = <&kp A>, <&mt_hrm A LGUI>;
       mods = <(MOD_LSFT)>;
     };
 
     mm_hrm_j: mm_hrm_j {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp j>, <&mt_hrm j RSHIFT>;
+      bindings = <&kp J>, <&mt_hrm J RSHIFT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_k: mm_hrm_k {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp k>, <&mt_hrm k LCTRL>;
+      bindings = <&kp K>, <&mt_hrm K LCTRL>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_l: mm_hrm_l {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp l>, <&mt_hrm_alt l LALT>;
+      bindings = <&kp L>, <&mt_hrm_alt L LALT>;
       mods = <(MOD_LSFT)>;
     };
     mm_hrm_apos: mm_hrm_apos {
@@ -115,13 +118,13 @@
     u_bt_sel_3: u_bt_sel_3 {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = < &bt BT_SEL x3 >, < &bt_clr_3 >;
+      bindings = < &bt BT_SEL 3 >, < &bt_clr_3 >;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     u_bt_sel_4: u_bt_sel_4 {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = < &bt BT_SEL x4 >, < &bt_clr_4 >;
+      bindings = < &bt BT_SEL 4 >, < &bt_clr_4 >;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     u_out_tog: u_out_tog {
@@ -185,7 +188,7 @@
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
-      require-prior-idle = <250>;
+      require-prior-idle-ms = <250>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
@@ -210,7 +213,7 @@
  &none  &kp Q  &kp W  &kp E                  &kp R                       &kp T                       &kp Y            &kp U                      &kp I                &kp O    &kp P     &none
  &none  &kp A  &kp S  &kp D                  &kp F                       &kp G                       &kp H            &kp J                      &kp K                &kp L    &kp SQT   &none
  &none  &kp Z  &kp X  &kp C                  &kp V                       &kp B                       &kp N            &kp M                      &kp COMMA            &kp DOT  &kp FSLH  &none
-                      &u_lt LAYER_MEDIA ESC  &u_lt_spc LAYER_NAV  SPACE  &u_shftlt_hold LAYER_L TAB  &shftmo LAYER_R  &u_lt_hold LAYER_NUM BSPC  &lt LAYER_FUN ENTER
+                      &u_lt LAYER_MEDIA ESC  &u_lt_spc LAYER_NAV  SPACE  &u_shftlt_hold LAYER_MOD_L TAB  &shftmo LAYER_MOD_R  &u_lt_hold LAYER_NUM BSPC  &lt LAYER_FUN ENTER
            >;
         };
 
