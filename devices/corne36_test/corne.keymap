@@ -136,7 +136,7 @@
     u_caps_word: u_caps_word {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = < &caps_word >, <CAPSLOCK>;
+      bindings = < &caps_word >, <&kp CAPSLOCK>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     u_mtl: u_mtl {
