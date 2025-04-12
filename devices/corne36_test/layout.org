@@ -1,0 +1,209 @@
+#+NAME: Layers
+| Base     |
+| Base_HRM |
+| Mod_L    |
+| Mod_R    |
+| Num      |
+| Nav      |
+| Media    |
+| Fun      |
+| Mouse    |
+
+#+NAME: Base
+| &none | &kp Q | &kp W | &kp E                 | &kp R                      | &kp T                      | &kp Y           | &kp U                     | &kp I                 | &kp O   | &kp P    | &none |
+| &none | &kp A | &kp S | &kp D                 | &kp F                      | &kp G                      | &kp H           | &kp J                     | &kp K                 | &kp L   | &kp SQT  | &none |
+| &none | &kp Z | &kp X | &kp C                 | &kp V                      | &kp B                      | &kp N           | &kp M                     | &kp COMMA             | &kp DOT | &kp FSLH | &none |
+|       |       |       | &u_lt LAYER_MEDIA ESC | &u_lt_spc LAYER_NAV  SPACE | &u_shftlt_hold LAYER_L TAB | &shftmo LAYER_R | &u_lt_hold LAYER_NUM BSPC | &u_lt LAYER_FUN ENTER |         |          |       |
+
+#+NAME: Base_HRM
+| &none | &trans        | &trans        | &trans         | &trans         | &trans                | &trans     | &trans         | &trans         | &trans        | &trans          | &none |
+| &none | &u_mtl LGUI A | &u_mtl LALT S | &u_mtl LCTRL D | &u_mtl LSHFT F | &trans                | &trans     | &u_mtr LSHFT J | &u_mtr LCTRL K | &u_mtr LALT L | &u_mtr LGUI SQT | &none |
+| &none | &trans        | &trans        | &trans         | &trans         | &trans                | &trans     | &trans         | &trans         | &trans        | &trans          | &none |
+|       |               |               | &trans         | &trans         | &u_lt LAYER_MOUSE TAB | &kp LSHIFT | &trans         | &trans         |               |                 |       |
+
+
+#+NAME: Mod_L
+| &none | &trans    | &trans    | &trans    | &trans    | &trans | &trans | &trans | &trans | &trans | &trans | &none |
+| &none | &mm_hrm_a | &mm_hrm_s | &mm_hrm_d | &mm_hrm_f | &trans | &trans | &trans | &trans | &trans | &trans | &none |
+| &none | &trans    | &trans    | &trans    | &trans    | &trans | &trans | &trans | &trans | &trans | &trans | &none |
+|       |           |           | &trans    | &trans    | &none  | &trans | &trans | &trans |        |        |       |
+
+#+NAME: Mod_R
+| &none | &trans | &trans | &trans | &trans | &trans | &trans | &trans    | &trans    | &trans    | &trans       | &none |
+| &none | &trans | &trans | &trans | &trans | &trans | &trans | &mm_hrm_j | &mm_hrm_k | &mm_hrm_l | &mm_hrm_apos | &none |
+| &none | &trans | &trans | &trans | &trans | &trans | &trans | &trans    | &trans    | &trans    | &trans       | &none |
+|       |        |        | &trans | &trans | &trans | &none  | &trans    | &trans    |           |              |       |
+
+#+NAME: Num
+| &none | &kp LEFT_BRACKET | &kp NUMBER_7 | &kp NUMBER_8 | &kp NUMBER_9 | &kp RIGHT_BRACKET | &none  | &none      | &none     | &none        | &none        | &none |
+| &none | &kp SEMICOLON    | &kp NUMBER_4 | &kp NUMBER_5 | &kp NUMBER_6 | &kp EQUAL         | &none  | &kp LSHIFT | &kp LCTRL | &kp LEFT_ALT | &kp LEFT_GUI | &none |
+| &none | &kp GRAVE        | &kp NUMBER_1 | &kp NUMBER_2 | &kp NUMBER_3 | &kp BACKSLASH     | &none  | &none      | &none     | &none        | &none        | &none |
+|       |                  |              | &kp PERIOD   | &kp NUMBER_0 | &kp MINUS         | &trans | &none      | &trans    |              |              |       |
+
+#+NAME: Nav
+| &none | &none        | &none        | &none     | &none           | &none  | &none    | &none      | &none     | &none     | &none      | &none |
+| &none | &kp LEFT_GUI | &kp LEFT_ALT | &kp LCTRL | &kp LSHIFT      | &none  | &kp LEFT | &kp DOWN   | &kp UP    | &kp RIGHT | &caps_word | &none |
+| &none | &none        | &none        | &none     | &mo LAYER_MOUSE | &none  | &kp HOME | &kp PG_DN  | &kp PG_UP | &kp END   | &none      | &none |
+|       |              |              | &trans    | &none           | &trans | &trans   | &kp DELETE | &trans    |           |            |       |
+
+#+NAME: Media
+| &none | &none    | &none    | &none     | &none     | &none  | &none       | &none        | &none        | &none       | &none      | &none |
+| &none | &kp LGUI | &kp LALT | &kp LCTRL | &kp LSHFT | &none  | &kp C_PREV  | &kp C_VOL_DN | &kp C_VOL_UP | &kp C_NEXT  | &u_ep_tog  | &none |
+| &none | &none    | &kp RALT | &none     | &none     | &none  | &u_bt_sel_0 | &u_bt_sel_1  | &u_bt_sel_2  | &u_bt_sel_3 | &u_out_tog | &none |
+|       |          |          | &none     | &trans    | &trans | &kp C_STOP  | &kp C_PP     | &kp C_MUTE   |             |            |       |
+
+#+NAME: Fun
+| &none | &kp F12 | &kp F7 | &kp F8    | &kp F9 | &kp PSCRN       | &layer_on LAYER_BASE_HRM | &layer_off LAYER_BASE_HRM | &none     | &none    | &none    | &none |
+| &none | &kp F11 | &kp F4 | &kp F5    | &kp F6 | &kp SLCK        | &none                    | &kp LSHFT                 | &kp LCTRL | &kp LALT | &kp LGUI | &none |
+| &none | &kp F10 | &kp F1 | &kp F2    | &kp F3 | &kp PAUSE_BREAK | &none                    | &none                     | &none     | &kp RALT | &none    | &none |
+|       |         |        | &kp K_APP | &trans | &trans          | &trans                   | &trans                    | &none     |          |          |       |
+
+#+NAME: Mouse
+| &none | &none    | &none    | &none     | &none     | &none | &none          | &none          | &none        | &none           | &none | &none |
+| &none | &kp LGUI | &kp LALT | &kp LCTRL | &kp LSHFT | &none | &mmv MOVE_LEFT | &mmv MOVE_DOWN | &mmv MOVE_UP | &mmv MOVE_RIGHT | &none | &none |
+| &none | &none    | &kp RALT | &none     | &none     | &none | &msc SCRL_LEFT | &msc SCRL_DOWN | &msc SCRL_UP | &msc SCRL_RIGHT | &none | &none |
+|       |          |          | &trans    | &trans    | &none | &mkp MB2       | &mkp MB1       | &mkp MB3     |                 |       |       |
+* COMMENT build from org table (in progress)
+
+#+begin_src elisp :var col_layers=Layers
+(defun layer_idx_includes (layer_names)
+  (string-join
+   (seq-map-indexed
+    (lambda (lyr lyr_idx)
+      (format "#define LAYER_%s %d" (upcase lyr) lyr_idx)
+      ) layer_names)
+   "\n"))
+
+(defun lyrtbl-keymap-part (lyr_name)
+  (let* ((table (org-babel-ref-resolve lyr_name))
+         (widths (mapcar (lambda (n)
+                           (apply #'max (mapcar (lambda (row)
+                                                  (length (nth n row)))
+                                                table)))
+                         (number-sequence 0 (1- (length (car table)))))))
+    (string-join
+     (mapcar (lambda (row)
+               (string-join (cl-mapcar (lambda (cell width)
+                                         (format (format "%%-%ds" width) cell))
+                                       row widths)
+                            "  "))
+             table)
+     "\n")))
+
+(defun lyr_keymap (lyr_name)
+  (format "    %s {\n        bindings = <\n%s\n        >;    \n    };\n" lyr_name (lyrtbl-keymap-part lyr_name)))
+
+(defun layers_keymap (layer_names)
+  (concat "  keymap {\n    compatible = \"zmk,keymap\";\n\n"
+  (string-join (mapcar #'lyr_keymap layer_names) "\n")
+  "  };\n"))
+
+(defun tbl_transpose (tbl)
+  (apply #'cl-mapcar #'list tbl))
+
+(let ((layers (car (tbl_transpose col_layers))))
+  (concat
+   (layer_idx_includes layers)
+   "\n\n\n"
+   (layers_keymap layers)
+   ))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#define LAYER_BASE 0
+#define LAYER_BASE_HRM 1
+#define LAYER_MOD_L 2
+#define LAYER_MOD_R 3
+#define LAYER_NUM 4
+#define LAYER_NAV 5
+#define LAYER_MEDIA 6
+#define LAYER_FUN 7
+#define LAYER_MOUSE 8
+
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    Base {
+        bindings = <
+&none  &kp Q  &kp W  &kp E                  &kp R                       &kp T                       &kp Y            &kp U                      &kp I                  &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D                  &kp F                       &kp G                       &kp H            &kp J                      &kp K                  &kp L    &kp SQT   &none
+&none  &kp Z  &kp X  &kp C                  &kp V                       &kp B                       &kp N            &kp M                      &kp COMMA              &kp DOT  &kp FSLH  &none
+                     &u_lt LAYER_MEDIA ESC  &u_lt_spc LAYER_NAV  SPACE  &u_shftlt_hold LAYER_L TAB  &shftmo LAYER_R  &u_lt_hold LAYER_NUM BSPC  &u_lt LAYER_FUN ENTER
+        >;
+    };
+
+    Base_HRM {
+        bindings = <
+&none  &trans         &trans         &trans          &trans          &trans                 &trans      &trans          &trans          &trans         &trans           &none
+&none  &u_mtl LGUI A  &u_mtl LALT S  &u_mtl LCTRL D  &u_mtl LSHFT F  &trans                 &trans      &u_mtr LSHFT J  &u_mtr LCTRL K  &u_mtr LALT L  &u_mtr LGUI SQT  &none
+&none  &trans         &trans         &trans          &trans          &trans                 &trans      &trans          &trans          &trans         &trans           &none
+                                     &trans          &trans          &u_lt LAYER_MOUSE TAB  &kp LSHIFT  &trans          &trans
+        >;
+    };
+
+    Mod_L {
+        bindings = <
+&none  &trans     &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &mm_hrm_a  &mm_hrm_s  &mm_hrm_d  &mm_hrm_f  &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &trans     &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &none
+                             &trans     &trans     &none   &trans  &trans  &trans
+        >;
+    };
+
+    Mod_R {
+        bindings = <
+&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans        &none
+&none  &trans  &trans  &trans  &trans  &trans  &trans  &mm_hrm_j  &mm_hrm_k  &mm_hrm_l  &mm_hrm_apos  &none
+&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans        &none
+                       &trans  &trans  &trans  &none   &trans     &trans
+        >;
+    };
+
+    Num {
+        bindings = <
+&none  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &none   &none       &none      &none         &none         &none
+&none  &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL          &none   &kp LSHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &none
+&none  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &none   &none       &none      &none         &none         &none
+                                       &kp PERIOD    &kp NUMBER_0  &kp MINUS          &trans  &none       &trans
+        >;
+    };
+
+    Nav {
+        bindings = <
+&none  &none         &none         &none      &none            &none   &none     &none       &none      &none      &none       &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LSHIFT       &none   &kp LEFT  &kp DOWN    &kp UP     &kp RIGHT  &caps_word  &none
+&none  &none         &none         &none      &mo LAYER_MOUSE  &none   &kp HOME  &kp PG_DN   &kp PG_UP  &kp END    &none       &none
+                                   &trans     &none            &trans  &trans    &kp DELETE  &trans
+        >;
+    };
+
+    Media {
+        bindings = <
+&none  &none     &none     &none      &none      &none   &none        &none         &none         &none        &none       &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &kp C_PREV   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT   &u_ep_tog   &none
+&none  &none     &kp RALT  &none      &none      &none   &u_bt_sel_0  &u_bt_sel_1   &u_bt_sel_2   &u_bt_sel_3  &u_out_tog  &none
+                           &none      &trans     &trans  &kp C_STOP   &kp C_PP      &kp C_MUTE
+        >;
+    };
+
+    Fun {
+        bindings = <
+&none  &kp F12  &kp F7  &kp F8     &kp F9  &kp PSCRN        &layer_on LAYER_BASE_HRM  &layer_off LAYER_BASE_HRM  &none      &none     &none     &none
+&none  &kp F11  &kp F4  &kp F5     &kp F6  &kp SLCK         &none                     &kp LSHFT                  &kp LCTRL  &kp LALT  &kp LGUI  &none
+&none  &kp F10  &kp F1  &kp F2     &kp F3  &kp PAUSE_BREAK  &none                     &none                      &none      &kp RALT  &none     &none
+                        &kp K_APP  &trans  &trans           &trans                    &trans                     &none
+        >;
+    };
+
+    Mouse {
+        bindings = <
+&none  &none     &none     &none      &none      &none  &none           &none           &none         &none            &none  &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none  &none
+&none  &none     &kp RALT  &none      &none      &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
+                           &trans     &trans     &none  &mkp MB2        &mkp MB1        &mkp MB3
+        >;
+    };
+  };
+#+end_example
