@@ -8,12 +8,11 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define LAYER_BASE 0
-#define LAYER_BASE_S 1
-#define LAYER_NAV 2
-#define LAYER_NUM 3
-#define LAYER_MEDIA 4
-#define LAYER_FUN 5
-#define LAYER_MOUSE 6
+#define LAYER_NAV 1
+#define LAYER_NUM 2
+#define LAYER_MEDIA 3
+#define LAYER_FUN 4
+#define LAYER_MOUSE 5
 / {
   behaviors {
     u_bt_sel_0: u_bt_sel_0 {
@@ -71,18 +70,6 @@
       bindings = < &caps_word >, <&kp CAPSLOCK>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    tln: tln {
-      compatible = "zmk,behavior-toggle-layer";
-      #binding-cells = <1>;
-      display-name = "Toggle Layer On";
-      toggle-mode = "on";
-    };
-    tlf: tlf {
-      compatible = "zmk,behavior-toggle-layer";
-      #binding-cells = <1>;
-      display-name = "Toggle Layer Off";
-      toggle-mode = "off";
-    };
     lts: lts {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -101,32 +88,23 @@
 &none  &kp Q  &kp W  &kp E    &kp R      &kp T               &kp Y       &kp U           &kp I      &kp O    &kp P     &none
 &none  &kp A  &kp S  &kp D    &kp F      &kp G               &kp H       &kp J           &kp K      &kp L    &kp SQT   &none
 &none  &kp Z  &kp X  &kp C    &kp V      &kp B               &kp N       &kp M           &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp ESC  &kp SPACE  &lts LAYER_NAV TAB  &kp LSHIFT  &smo LAYER_NUM  &kp ENTER                          
-        >;    
-    };
-
-    Base_S {
-        bindings = <
-&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
-&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
-&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
-                       &kp ENTER  &kp SPACE  &smo LAYER_NAV  &kp LSHIFT  &smo LAYER_NUM  &kp ESC                       
+                     &kp ESC  &kp SPACE  &lts LAYER_NAV TAB  &kp LSHIFT  &smo LAYER_NUM  &kp BSPC                           
         >;    
     };
 
     Nav {
         bindings = <
-&none  &none      &none          &none       &none        &mo LAYER_MEDIA  &tln LAYER_BASE_S  &tlf LAYER_BASE_S  &none       &none      &none         &none
-&none  &csk LGUI  &csk LEFT_ALT  &csk LCTRL  &csk LSHIFT  &mo LAYER_MOUSE  &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT  &u_caps_word  &none
-&none  &none      &kp LA(X)      &kp LC(C)   &none        &none            &kp HOME           &kp PG_DN          &kp PG_UP   &kp END    &none         &none
-                                 &trans      &trans       &none            &kp TAB            &kp BSPC           &kp DELETE                                
+&none  &none      &none          &none       &none        &mo LAYER_MEDIA  &none     &none      &none       &none      &none         &none
+&none  &csk LGUI  &csk LEFT_ALT  &csk LCTRL  &csk LSHIFT  &mo LAYER_MOUSE  &kp LEFT  &kp DOWN   &kp UP      &kp RIGHT  &u_caps_word  &none
+&none  &none      &kp LA(X)      &kp LC(C)   &none        &none            &kp HOME  &kp PG_DN  &kp PG_UP   &kp END    &none         &none
+                                 &trans      &trans       &none            &kp TAB   &kp ENTER  &kp DELETE                                
         >;    
     };
 
     Num {
         bindings = <
-&none  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &mo LAYER_FUN  &none        &none       &none          &none      &none
-&none  &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL          &none          &csk LSHIFT  &csk LCTRL  &csk LEFT_ALT  &csk LGUI  &none
+&none  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &none          &none        &none       &none          &none      &none
+&none  &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL          &mo LAYER_FUN  &csk LSHIFT  &csk LCTRL  &csk LEFT_ALT  &csk LGUI  &none
 &none  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &none          &none        &trans      &trans         &trans     &none
                                        &kp PERIOD    &kp NUMBER_0  &kp MINUS          &trans         &none        &trans                                     
         >;    
