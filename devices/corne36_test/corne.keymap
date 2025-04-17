@@ -98,19 +98,19 @@
 
     Base {
         bindings = <
-&none  &kp Q  &kp W  &kp E    &kp R      &kp T               &kp Y           &kp U       &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D    &kp F      &kp G               &kp H           &kp J       &kp K      &kp L    &kp SQT   &none
-&none  &kp Z  &kp X  &kp C    &kp V      &kp B               &kp N           &kp M       &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp ESC  &kp SPACE  &lts LAYER_NAV TAB  &smo LAYER_NUM  &kp LSHIFT  &kp ENTER                          
+&none  &kp Q  &kp W  &kp E    &kp R      &kp T               &kp Y       &kp U           &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D    &kp F      &kp G               &kp H       &kp J           &kp K      &kp L    &kp SQT   &none
+&none  &kp Z  &kp X  &kp C    &kp V      &kp B               &kp N       &kp M           &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp ESC  &kp SPACE  &lts LAYER_NAV TAB  &kp LSHIFT  &smo LAYER_NUM  &kp ENTER                          
         >;    
     };
 
     Base_S {
         bindings = <
-&none  &trans  &trans  &trans     &trans     &trans          &trans          &trans      &trans   &trans  &trans  &none
-&none  &trans  &trans  &trans     &trans     &trans          &trans          &trans      &trans   &trans  &trans  &none
-&none  &trans  &trans  &trans     &trans     &trans          &trans          &trans      &trans   &trans  &trans  &none
-                       &kp ENTER  &kp SPACE  &smo LAYER_NAV  &smo LAYER_NUM  &kp LSHIFT  &kp ESC                       
+&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
+&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
+&none  &trans  &trans  &trans     &trans     &trans          &trans      &trans          &trans   &trans  &trans  &none
+                       &kp ENTER  &kp SPACE  &smo LAYER_NAV  &kp LSHIFT  &smo LAYER_NUM  &kp ESC                       
         >;    
     };
 

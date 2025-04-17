@@ -12,16 +12,16 @@
 | Mouse  |
 
 #+NAME: Base
-| &kp Q | &kp W | &kp E   | &kp R     | &kp T              | &kp Y          | &kp U      | &kp I     | &kp O   | &kp P    |
-| &kp A | &kp S | &kp D   | &kp F     | &kp G              | &kp H          | &kp J      | &kp K     | &kp L   | &kp SQT  |
-| &kp Z | &kp X | &kp C   | &kp V     | &kp B              | &kp N          | &kp M      | &kp COMMA | &kp DOT | &kp FSLH |
-|       |       | &kp ESC | &kp SPACE | &lts LAYER_NAV TAB | &smo LAYER_NUM | &kp LSHIFT | &kp ENTER |         |          |
+| &kp Q | &kp W | &kp E   | &kp R     | &kp T              | &kp Y      | &kp U          | &kp I     | &kp O   | &kp P    |
+| &kp A | &kp S | &kp D   | &kp F     | &kp G              | &kp H      | &kp J          | &kp K     | &kp L   | &kp SQT  |
+| &kp Z | &kp X | &kp C   | &kp V     | &kp B              | &kp N      | &kp M          | &kp COMMA | &kp DOT | &kp FSLH |
+|       |       | &kp ESC | &kp SPACE | &lts LAYER_NAV TAB | &kp LSHIFT | &smo LAYER_NUM | &kp ENTER |         |          |
 
 #+NAME: Base_S
-| &trans | &trans | &trans    | &trans    | &trans         | &trans         | &trans     | &trans  | &trans | &trans |
-| &trans | &trans | &trans    | &trans    | &trans         | &trans         | &trans     | &trans  | &trans | &trans |
-| &trans | &trans | &trans    | &trans    | &trans         | &trans         | &trans     | &trans  | &trans | &trans |
-|        |        | &kp ENTER | &kp SPACE | &smo LAYER_NAV | &smo LAYER_NUM | &kp LSHIFT | &kp ESC |        |        |
+| &trans | &trans | &trans    | &trans    | &trans         | &trans     | &trans         | &trans  | &trans | &trans |
+| &trans | &trans | &trans    | &trans    | &trans         | &trans     | &trans         | &trans  | &trans | &trans |
+| &trans | &trans | &trans    | &trans    | &trans         | &trans     | &trans         | &trans  | &trans | &trans |
+|        |        | &kp ENTER | &kp SPACE | &smo LAYER_NAV | &kp LSHIFT | &smo LAYER_NUM | &kp ESC |        |        |
 
 #+NAME: Nav
 | &none     | &none         | &none      | &none       | &mo LAYER_MEDIA | &tln LAYER_BASE_S | &tlf LAYER_BASE_S | &none      | &none     | &none        |
@@ -30,10 +30,10 @@
 |           |               | &trans     | &trans      | &none           | &kp TAB           | &kp BSPC          | &kp DELETE |           |              |
 
 #+NAME: Num
-| &kp LEFT_BRACKET | &kp NUMBER_7 | &kp NUMBER_8 | &kp NUMBER_9 | &kp RIGHT_BRACKET | &mo LAYER_FUN | &none     | &none      | &none         | &none       |
+| &kp LEFT_BRACKET | &kp NUMBER_7 | &kp NUMBER_8 | &kp NUMBER_9 | &kp RIGHT_BRACKET | &mo LAYER_FUN | &none       | &none      | &none         | &none     |
 | &kp SEMICOLON    | &kp NUMBER_4 | &kp NUMBER_5 | &kp NUMBER_6 | &kp EQUAL         | &none         | &csk LSHIFT | &csk LCTRL | &csk LEFT_ALT | &csk LGUI |
-| &kp GRAVE        | &kp NUMBER_1 | &kp NUMBER_2 | &kp NUMBER_3 | &kp BACKSLASH     | &none         | &none     | &trans     | &trans        | &trans      |
-|                  |              | &kp PERIOD   | &kp NUMBER_0 | &kp MINUS         | &trans        | &none     | &trans     |               |             |
+| &kp GRAVE        | &kp NUMBER_1 | &kp NUMBER_2 | &kp NUMBER_3 | &kp BACKSLASH     | &none         | &none       | &trans     | &trans        | &trans    |
+|                  |              | &kp PERIOD   | &kp NUMBER_0 | &kp MINUS         | &trans        | &none       | &trans     |               |           |
 
 #+NAME: Media
 | &none     | &none     | &none      | &none       | &none  | &none       | &none        | &none        | &none       | &none      |
