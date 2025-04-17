@@ -70,14 +70,6 @@
       bindings = < &caps_word >, <&kp CAPSLOCK>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    lts: lts {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <200>;
-      flavor = "hold-preferred";
-      bindings = <&smo>, <&kp>;
-      quick-tap-ms = <175>;
-    };
   };
 
   keymap {
@@ -85,10 +77,10 @@
 
     Base {
         bindings = <
-&none  &kp Q  &kp W  &kp E    &kp R      &kp T               &kp Y       &kp U           &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D    &kp F      &kp G               &kp H       &kp J           &kp K      &kp L    &kp SQT   &none
-&none  &kp Z  &kp X  &kp C    &kp V      &kp B               &kp N       &kp M           &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp ESC  &kp SPACE  &lts LAYER_NAV TAB  &kp LSHIFT  &smo LAYER_NUM  &kp BSPC                           
+&none  &kp Q  &kp W  &kp E    &kp R      &kp T           &kp Y       &kp U           &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D    &kp F      &kp G           &kp H       &kp J           &kp K      &kp L    &kp SQT   &none
+&none  &kp Z  &kp X  &kp C    &kp V      &kp B           &kp N       &kp M           &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp ESC  &kp SPACE  &smo LAYER_NAV  &kp LSHIFT  &smo LAYER_NUM  &kp BSPC                           
         >;    
     };
 

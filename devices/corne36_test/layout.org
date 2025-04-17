@@ -10,10 +10,10 @@
 | Mouse  |
 
 #+NAME: Base
-| &kp Q | &kp W | &kp E   | &kp R     | &kp T              | &kp Y      | &kp U          | &kp I     | &kp O   | &kp P    |
-| &kp A | &kp S | &kp D   | &kp F     | &kp G              | &kp H      | &kp J          | &kp K     | &kp L   | &kp SQT  |
-| &kp Z | &kp X | &kp C   | &kp V     | &kp B              | &kp N      | &kp M          | &kp COMMA | &kp DOT | &kp FSLH |
-|       |       | &kp ESC | &kp SPACE | &lts LAYER_NAV TAB | &kp LSHIFT | &smo LAYER_NUM | &kp BSPC  |         |          |
+| &kp Q | &kp W | &kp E   | &kp R     | &kp T          | &kp Y      | &kp U          | &kp I     | &kp O   | &kp P    |
+| &kp A | &kp S | &kp D   | &kp F     | &kp G          | &kp H      | &kp J          | &kp K     | &kp L   | &kp SQT  |
+| &kp Z | &kp X | &kp C   | &kp V     | &kp B          | &kp N      | &kp M          | &kp COMMA | &kp DOT | &kp FSLH |
+|       |       | &kp ESC | &kp SPACE | &smo LAYER_NAV | &kp LSHIFT | &smo LAYER_NUM | &kp BSPC  |         |          |
 
 #+NAME: Nav
 | &none     | &none         | &none      | &none       | &mo LAYER_MEDIA | &none    | &none     | &none      | &none     | &none        |
@@ -104,14 +104,6 @@
       #binding-cells = <0>;
       bindings = < &caps_word >, <&kp CAPSLOCK>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    lts: lts {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <200>;
-      flavor = "hold-preferred";
-      bindings = <&smo>, <&kp>;
-      quick-tap-ms = <175>;
     };
   };
 #+end_example
