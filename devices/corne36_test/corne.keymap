@@ -92,7 +92,7 @@
 
     Nav {
         bindings = <
-&none  &kp LS(TAB)  &kp TAB        &kp ENTER   &none        &mo LAYER_MEDIA  &none     &none      &kp ESC     &kp BSPC   &kp DEL       &none
+&none  &kp LS(TAB)  &kp TAB        &kp ENTER   &none        &mo LAYER_MEDIA  &none     &none      &none       &none      &none         &none
 &none  &csk LGUI    &csk LEFT_ALT  &csk LCTRL  &csk LSHIFT  &mo LAYER_MOUSE  &kp LEFT  &kp DOWN   &kp UP      &kp RIGHT  &u_caps_word  &none
 &none  &none        &kp LA(X)      &kp LC(C)   &none        &none            &kp HOME  &kp PG_DN  &kp PG_UP   &kp END    &none         &none
                                    &trans      &trans       &none            &trans    &none      &kp DELETE                                
@@ -101,7 +101,7 @@
 
     Num {
         bindings = <
-&none  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &none          &none        &none       &none          &none      &none
+&none  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &none          &none        &kp ESC     &kp BSPC       &kp DEL    &none
 &none  &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL          &mo LAYER_FUN  &csk LSHIFT  &csk LCTRL  &csk LEFT_ALT  &csk LGUI  &none
 &none  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &none          &none        &trans      &trans         &trans     &none
                                        &mm_dotlpar   &kp NUMBER_0  &kp MINUS          &trans         &none        &trans                                     
