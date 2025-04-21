@@ -187,8 +187,6 @@
   };
 #+end_example
 
-
-
 #+begin_src elisp
 (cl-defun zmk-org-mod-morph (name base withmod &optional (mods '("LSFT" "RSFT")) (binding name))
   "Make a mod-morph device tree entry.
@@ -205,9 +203,14 @@ behavior with MODS held. MODS are given as a list with available values of
                               "  };"))))
     (format templ binding name base withmod fmods)))
 
+(defun mapsplat (fun seq)
+  "Map a SPLAT'ed version of FUN over SEQ."
+  (mapcar (lambda (args) (apply fun args)) seq))
 (defun map-cartesian-product (fun seqa seqb)
-  "Map FUN over all combinations of SEQA and SEQB."
-  (mapcar (lambda (sb) (mapcar (lambda (sa) (funcall fun sa sb)) seqa)) seqb))
+  "FUN over all combinations of SEQA and SEQB."
+  (mapcar (lambda (sb)
+            (mapcar (lambda (sa) (funcall fun sa sb)) seqa))
+          seqb))
 
 (let* ((modargs '(("mm_dotlpar" "&kp DOT" "&kp LPAR" ("LSFT"))
                   ("u_ep_tog" "&ext_power EP_TOG" " &ext_power EP_OFF")
@@ -216,9 +219,7 @@ behavior with MODS held. MODS are given as a list with available values of
        (bt_bhvs (map-cartesian-product #'format
                                        '("u_bt_sel_%d" "&bt BT_SEL %d" "&bt_clr_%d")
                                        (number-sequence 0 4)))
-       (mod-morphs (mapcar (lambda (mmargs)
-                             (apply #'zmk-org-mod-morph mmargs))
-                           (append modargs bt_bhvs)))
+       (mod-morphs (mapsplat #'zmk-org-mod-morph (append modargs bt_bhvs)))
        (other (list (org-babel-ref-resolve "otherbehaviors"))))
   (format "behaviors {\n%s\n};" (s-join "\n" (append mod-morphs other))))
 #+end_src
