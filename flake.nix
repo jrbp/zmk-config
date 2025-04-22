@@ -20,7 +20,7 @@
       default = firmware;
 
       # TODO: make more conducive to multiple keyboards in repo
-      firmware = corne36_test;
+      firmware = totem_ble;
       flash = pkgs.callPackage ./nix/flash.nix {inherit firmware;};
       update = pkgs.callPackage ./nix/update.nix {};
 
@@ -40,6 +40,21 @@
           platforms = nixpkgs.lib.platforms.all;
         };
       };
+      totem_ble = self.legacyPackages.${system}.buildSplitKeyboard {
+        name = "totem_ble";
+        config = "devices/totem_ble";
+        src = nixpkgs.lib.sourceFilesBySuffices self [".conf" ".h" ".dtsi" ".keymap" ".yml" ".shield" ".defconfig" ".overlay"];
+        board = "seeeduino_xiao_ble";
+        shield = "totem_%PART%";
+
+        zephyrDepsHash = "sha256-NjbW2MJixImOQS+9WVDR+JxsZkUTi8+fI/MmfipELNk=";
+
+        meta = {
+          description = "totem_ble ZMK firmware";
+          license = nixpkgs.lib.licenses.mit;
+          platforms = nixpkgs.lib.platforms.all;
+        };
+      };
       reset = self.legacyPackages.${system}.buildSplitKeyboard {
         name = "reset";
         config = "devices/corne36";
@@ -47,7 +62,7 @@
         board = "nice_nano_v2";
         shield = "settings_reset";
 
-        zephyrDepsHash = "sha256-RaWV1oeF2LTs6ZW73uj9u+sOgbQNgNko6t2hex2B/IM=";
+        zephyrDepsHash = "sha256-NjbW2MJixImOQS+9WVDR+JxsZkUTi8+fI/MmfipELNk=";
 
         meta = {
           description = "reset corne36 ZMK firmware";
