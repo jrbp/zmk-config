@@ -11,22 +11,22 @@
 
 
 #+NAME: Base
-|       | &kp Q | &kp W | &kp E   | &kp R     | &kp T         | &kp Y      | &kp U          | &kp I     | &kp O   | &kp P    |       |
-|       | &kp A | &kp S | &kp D   | &kp F     | &kp G         | &kp H      | &kp J          | &kp K     | &kp L   | &kp SQT  |       |
-| &none | &kp Z | &kp X | &kp C   | &kp V     | &kp B         | &kp N      | &kp M          | &kp COMMA | &kp DOT | &kp FSLH | &none |
-|       |       |       | &kp ESC | &kp SPACE | &mo LAYER_NAV | &kp LSHIFT | &smo LAYER_NUM | &kp BSPC  |         |          |       |
+|              | &kp Q | &kp W | &kp E   | &kp R     | &kp T         | &kp Y      | &kp U          | &kp I     | &kp O   | &kp P    |              |
+|              | &kp A | &kp S | &kp D   | &kp F     | &kp G         | &kp H      | &kp J          | &kp K     | &kp L   | &kp SQT  |              |
+| &kp K_CANCEL | &kp Z | &kp X | &kp C   | &kp V     | &kp B         | &kp N      | &kp M          | &kp COMMA | &kp DOT | &kp FSLH | &kp K_CANCEL |
+|              |       |       | &kp ESC | &kp SPACE | &mo LAYER_NAV | &kp LSHIFT | &smo LAYER_NUM | &kp BSPC  |         |          |              |
 
 #+NAME: Nav
-|       | &kp LS(TAB) | &kp TAB      | &kp ENTER | &none    | &mo LAYER_MEDIA | &none    | &none          | &none      | &none     | &none        |       |
-|       | &sk LSHIFT  | &sk LEFT_ALT | &sk LCTRL | &sk LGUI | &mo LAYER_MOUSE | &kp LEFT | &kp DOWN       | &kp UP     | &kp RIGHT | &u_caps_word |       |
-| &none | &none       | &kp LA(X)    | &kp LC(C) | &none    | &none           | &kp HOME | &kp PG_DN      | &kp PG_UP  | &kp END   | &none        | &none |
-|       |             |              | &trans    | &trans   | &none           | &trans   | &tln LAYER_NUM | &kp DELETE |           |              |       |
+|                | &kp LS(TAB) | &kp TAB      | &kp ENTER | &none        | &mo LAYER_MEDIA | &none    | &none     | &none      | &none     | &none        |       |
+|                | &sk LSHIFT  | &sk LEFT_ALT | &sk LCTRL | &sk LGUI     | &mo LAYER_MOUSE | &kp LEFT | &kp DOWN  | &kp UP     | &kp RIGHT | &u_caps_word |       |
+| &tln LAYER_NUM | &none       | &kp LA(X)    | &kp LC(C) | &kp K_CANCEL | &none           | &kp HOME | &kp PG_DN | &kp PG_UP  | &kp END   | &none        | &none |
+|                |             |              | &trans    | &trans       | &none           | &trans   | &trans    | &kp DELETE |           |              |       |
 
 #+NAME: Num
-|       | &kp LEFT_BRACKET | &kp NUMBER_7 | &kp NUMBER_8 | &kp NUMBER_9 | &kp RIGHT_BRACKET | &mo LAYER_FUN | &none          | &kp ESC   | &kp BSPC     | &kp DEL    |       |
-|       | &kp SEMICOLON    | &kp NUMBER_4 | &kp NUMBER_5 | &kp NUMBER_6 | &kp EQUAL         | &none         | &sk LGUI       | &sk LCTRL | &sk LEFT_ALT | &sk LSHIFT |       |
-| &none | &kp GRAVE        | &kp NUMBER_1 | &kp NUMBER_2 | &kp NUMBER_3 | &kp BACKSLASH     | &none         | &none          | &trans    | &trans       | &trans     | &none |
-|       |                  |              | &mm_dotlpar  | &kp NUMBER_0 | &kp MINUS         | &trans        | &tlf LAYER_NUM | &trans    |              |            |       |
+|                | &kp LEFT_BRACKET | &kp NUMBER_7 | &kp NUMBER_8 | &kp NUMBER_9 | &kp RIGHT_BRACKET | &mo LAYER_FUN | &kp TAB   | &kp ESC   | &kp BSPC     | &kp DEL    |       |
+|                | &kp SEMICOLON    | &kp NUMBER_4 | &kp NUMBER_5 | &kp NUMBER_6 | &kp EQUAL         | &none         | &sk LGUI  | &sk LCTRL | &sk LEFT_ALT | &sk LSHIFT |       |
+| &tlf LAYER_NUM | &kp GRAVE        | &kp NUMBER_1 | &kp NUMBER_2 | &kp NUMBER_3 | &kp BACKSLASH     | &none         | &kp ENTER | &trans    | &trans       | &trans     | &none |
+|                |                  |              | &mm_dotlpar  | &kp NUMBER_0 | &kp MINUS         | &trans        | &ks SPACE | &trans    |              |            |       |
 
 #+NAME: Media
 |       | &none      | &none    | &none     | &none    | &none  | &none       | &none        | &none        | &none       | &u_out_tog  |       |
