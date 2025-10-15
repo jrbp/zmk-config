@@ -112,7 +112,7 @@
                 &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET  &mo LAYER_FUN  &kp TAB    &kp ESC    &kp BSPC      &kp DEL          
                 &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL          &none          &sk LGUI   &sk LCTRL  &sk LEFT_ALT  &sk LSHIFT       
 &tlf LAYER_NUM  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &none          &kp ENTER  &trans     &trans        &trans      &none
-                                                &mm_dotlpar   &kp NUMBER_0  &kp MINUS          &trans         &ks SPACE  &trans                                    
+                                                &mm_dotlpar   &kp NUMBER_0  &kp MINUS          &trans         &kp SPACE  &trans                                    
         >;    
     };
 
@@ -145,10 +145,10 @@
 
     Game {
         bindings = <
-          &kp TAB     &kp Q  &kp F    &kp E      &kp Z          &kp K_CANCEL   &kp C_PP        &kp C_MUTE     &kp C_STOP  &kp LS(TAB)                 
-          &kp LSFHIT  &kp A  &kp W    &kp D      &kp X          &kp C_PREV     &kp C_VOL_DN    &kp C_VOL_UP   &kp C_NEXT  &none                       
-&kp LALT  &kp LCTRL   &kp Z  &kp S    &kp R      &kp V          &none          &kp ENTER       &none          &none       &none        &tlf LAYER_GAME
-                             &kp ESC  &kp SPACE  &mo LAYER_NUM  &mo LAYER_NAV  &mo LAYER_BASE  &kp BACKSPACE                                          
+          &kp TAB     &kp Q  &kp F    &kp E      &kp Z          &kp K_CANCEL   &kp C_PP      &kp C_MUTE     &kp C_STOP  &kp LS(TAB)                 
+          &kp LSHIFT  &kp A  &kp W    &kp D      &kp X          &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT  &none                       
+&kp LALT  &kp LCTRL   &kp Z  &kp S    &kp R      &kp V          &none          &kp ENTER     &none          &none       &none        &tlf LAYER_GAME
+                             &kp ESC  &kp SPACE  &mo LAYER_NUM  &mo LAYER_NAV  &none         &kp BACKSPACE                                          
         >;    
     };
   };
