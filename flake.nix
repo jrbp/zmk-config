@@ -47,7 +47,7 @@
         board = "seeeduino_xiao_ble";
         shield = "totem_%PART%";
 
-        zephyrDepsHash = "sha256-NjbW2MJixImOQS+9WVDR+JxsZkUTi8+fI/MmfipELNk=";
+        zephyrDepsHash = "sha256-8NN3sX93Oz4ClK4fWcg0Uoizq+NFPtsw+4/EAcGjHuk=";
 
         meta = {
           description = "totem_ble ZMK firmware";
@@ -62,7 +62,7 @@
         board = "nice_nano_v2";
         shield = "settings_reset";
 
-        zephyrDepsHash = "sha256-NjbW2MJixImOQS+9WVDR+JxsZkUTi8+fI/MmfipELNk=";
+        zephyrDepsHash = "sha256-8NN3sX93Oz4ClK4fWcg0Uoizq+NFPtsw+4/EAcGjHuk=";
 
         meta = {
           description = "reset corne36 ZMK firmware";
